@@ -11,15 +11,15 @@ IP_ADDR=ipv4
 ###################################################################################################
 ##cloudflare配置
 #cloudflare账号邮箱
-x_email=xxx@xxx
+x_email=替换邮箱
 #填写需要DDNS的完整域名
 #支持多域名:域名需要填写在括号中，每个域名之间用“空格”相隔。
 #例如：（cdn.test.com） 或者 （cdn1.test.com cdn2.test.com cdn3.test.com）
-hostname=(cdn1.test.com cdn2.test.com)
+hostname=(域名1 域名2)
 #空间ID
-zone_id=
+zone_id=替换空间id
 #Global API Key
-api_key=
+api_key=替换Global API Key
 ###################################################################################################
 ##openwrt科学上网插件配置
 #优选节点时是否自动停止科学上网服务 true=自动停止 false=不停止 默认为 true
