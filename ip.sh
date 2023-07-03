@@ -34,5 +34,47 @@ clien=3
 telegramBotToken=
 #用户ID或频道、群ID 例如：123456789
 telegramBotUserId=
+#
+##PushPlus设置
+# PushPlus说明（https://www.pushplus.plus/）
+# --token码--
+PushPlusToken=
+#
+##Server 酱推送设置
+# Server 酱推送说明（https://sct.ftqq.com/）
+# --token码--
+ServerSendKey=
+#
+##pushdeer推送设置
+# PushDeer推送说明（http://www.pushdeer.com/product.html）
+# --token码--
+PushDeerPushKey=
+#
+##企业微信推送设置
+# 企业ID
+#（https://developer.work.weixin.qq.com/document/path/90665#corpid）
+CORPID=
+#
+# 应用ID
+# (https://developer.work.weixin.qq.com/document/path/90665#secret)
+SECRET=
+#
+# agentid
+#	(https://developer.work.weixin.qq.com/document/path/90665#agentid)
+AGENTID=
+#
+# 成员ID
+# (https://developer.work.weixin.qq.com/document/path/90665#userid)
+# 设置需要推送给谁，不填写默认推送给全员
+USERID=
+#
+# 企业微信推送代理域名
+# 由于企业微信限制推送需要ip白名单，但家里的网络一般不是固定ip，所以需要自建反向代理API域名，将反向代理服务器的ip加入企业微信的ip白名单
+Proxy_WX=
+#
+##Synology Chat推送
+# 使用群晖的chat套件进行推送，下方填写群晖chat中-整合-传入的webhook中，的Webhook URL地址。
+Synology_Chat_URL=""
+#
 #####################################################################################################
 source cf_ddns
