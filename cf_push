@@ -45,7 +45,7 @@ if [[ -z ${PushPlusToken} ]]; then
    echo "未配置PushPlus推送"
 else
    P_message_text=$(sed "$ ! s/$/\\%0A/ " ./informlog)
-   res=$(timeout 20s curl -s -X POST "http://www.pushplus.plus/send" -d "token=${PushPlusToken}" -d "title=cf优选ip推送" -d "content=${P_message_text}" -d "template=html")
+   res=$(timeout 20s curl -s -X POST "http://www.pushplus.plus/send" -d "token=${PushPlusToken}" -d "title=cf优选对端ip推送" -d "content=${P_message_text}" -d "template=html")
 
    if [ $? == 124 ];then
       echo 'PushPlus请求超时，请检查网络是否正常'
@@ -65,7 +65,7 @@ fi
 if [[ -z ${ServerSendKey} ]]; then
    echo "未配置Server 酱"
 else
-   res=$(timeout 20s curl -X POST https://sctapi.ftqq.com/${ServerSendKey}.send?title="cf优选ip推送" -d desp=${message_text})
+   res=$(timeout 20s curl -X POST https://sctapi.ftqq.com/${ServerSendKey}.send?title="cf优选对端ip推送" -d desp=${message_text})
 
    if [ $? == 124 ];then
       echo 'Server 酱请求超时,请检查网络是否可用'
@@ -85,7 +85,7 @@ if [[ -z ${PushDeerPushKey} ]]; then
    echo "未配置PushDeer推送"
 else
    P_message_text=$(sed "$ ! s/$/\\%0A/ " ./informlog)
-   res=$(timeout 20s curl -s -X POST $PushDeerURL -d text="## cf优选ip推送" -d desp="${P_message_text}" )
+   res=$(timeout 20s curl -s -X POST $PushDeerURL -d text="## cf优选对端ip推送" -d desp="${P_message_text}" )
    if [ $? == 124 ];then
       echo 'PushDeer_api请求超时,请检查网络是否正常'
    fi
