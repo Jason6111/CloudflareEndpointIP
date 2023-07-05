@@ -1,7 +1,7 @@
 #!/bin/bash
 ##用于CloudflareSpeedTestDDNS执行情况推送。
 
-message_text=$(echo "$(sed "$ ! s/$/\\\n/ " ./informlog | tr -d '\n')")
+message_text=$(echo "$(sed "$ ! s/$/\\\n/ " ./cf_ddns/informlog | tr -d '\n')")
 
 if [[ -z ${Proxy_TG} ]]; then
    tgapi="https://api.telegram.org"
@@ -39,12 +39,11 @@ else
 fi
 ####
 
-
 ##PushPlus推送##
 if [[ -z ${PushPlusToken} ]]; then
    echo "未配置PushPlus推送"
 else
-   P_message_text=$(sed "$ ! s/$/\\%0A/ " ./informlog)
+   P_message_text=$(sed "$ ! s/$/\\%0A/ " ./cf_ddns/informlog)
    res=$(timeout 20s curl -s -X POST "http://www.pushplus.plus/send" -d "token=${PushPlusToken}" -d "title=cf优选对端ip推送" -d "content=${P_message_text}" -d "template=html")
 
    if [ $? == 124 ];then
@@ -59,7 +58,6 @@ else
    fi
 fi
 ####
-
 
 ##Server 酱##
 if [[ -z ${ServerSendKey} ]]; then
@@ -84,7 +82,7 @@ fi
 if [[ -z ${PushDeerPushKey} ]]; then
    echo "未配置PushDeer推送"
 else
-   P_message_text=$(sed "$ ! s/$/\\%0A/ " ./informlog)
+   P_message_text=$(sed "$ ! s/$/\\%0A/ " ./cf_ddns/informlog)
    res=$(timeout 20s curl -s -X POST $PushDeerURL -d text="## cf优选对端ip推送" -d desp="${P_message_text}" )
    if [ $? == 124 ];then
       echo 'PushDeer_api请求超时,请检查网络是否正常'
@@ -139,7 +137,7 @@ if [[ $CHECK != "true" ]]; then
 else
    access_token=$(cat .access_token | jq -r ".access_token")
    WXURL=$WXURL
-   message_text=$(echo "$(sed "$ ! s/$/\\\n/ " ./informlog | tr -d '\n')")
+   message_text=$(echo "$(sed "$ ! s/$/\\\n/ " ./cf_ddns/informlog | tr -d '\n')")
    res=$(timeout 20s curl -X POST $WXURL$access_token -H "Content-type:application/json" -d '{"touser":"'$USERID'", "msgtype":"text", "agentid": "'$AGENTID'", "text":{"content":"'$message_text'"}}')
    if [ $? == 124 ];then
       echo '企业微信_api请求超时,请检查网络是否正常'          
