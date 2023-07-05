@@ -1,4 +1,4 @@
-# CloudflareSpeedTestDDNS
+# CloudflareEndpointIP
 openwrt优选对端IP定时上传CF和dnspod
 # 食用说明
 v0.0.1  
