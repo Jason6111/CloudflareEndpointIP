@@ -11,3 +11,6 @@ chmod +x CloudflareST
 bash ip.sh
 ```
 等待优选后上传
+
+# 达成效果  
+![image](demo/IMG.jpg) 
