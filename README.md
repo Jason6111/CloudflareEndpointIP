@@ -1,5 +1,6 @@
 # CloudflareEndpointIP
-openwrt优选对端IP定时上传CF和dnspod
+openwrt优选对端IP定时上传CF和dnspod  
+# 什么是[Server酱](https://sct.ftqq.com/r/13206)如何开通
 # 食用说明
 v0.0.1  
 1.下载[CloudflareEndpointIP](https://github.com/Jason6111/CloudflareEndpointIP/releases/download/0.0.1/CloudflareEndpointIP-0.0.1.zip)  
