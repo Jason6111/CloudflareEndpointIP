@@ -63,7 +63,7 @@ fi
 
 ##Server 酱##
 if [[ -z ${ServerSendKey} ]]; then
-   echo "未配置Server 酱"
+   echo "未配置Server 酱，开通请到https://sct.ftqq.com/r/13206"
 else
    res=$(timeout 20s curl -X POST https://sctapi.ftqq.com/${ServerSendKey}.send?title="cf优选对端ip推送" -d desp=${message_text})
 
